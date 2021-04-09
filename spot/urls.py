@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('places/', views.PlaceListView.as_view(), name='list-place'),
     path('places/<int:pk>', views.PlaceDetailView.as_view(), name='detail-place'),
+    path('city/places/<str:inputcity>', views.cityplaces, name='city-places'),
     
 ]

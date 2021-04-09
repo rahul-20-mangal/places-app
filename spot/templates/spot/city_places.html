@@ -1,0 +1,5 @@
+{% for place in cities %}
+
+    <a href="{% url 'detail-place' place.pk %}">{{place}}</a>
+
+{% endfor %}

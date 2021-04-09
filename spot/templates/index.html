@@ -1,6 +1,13 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Index Page</h1>  
-  
-{% endblock %}
+    
+    <ul>
+        {% for place in all_places %}
+          <li>
+             <a href="{% url 'city-places' place.city %}">{{place.city}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+
+{% endblock %}  
