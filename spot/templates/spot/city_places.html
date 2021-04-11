@@ -1,5 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
 {% for place in cities %}
 
     <a href="{% url 'detail-place' place.pk %}">{{place}}</a>
 
 {% endfor %}
+{% endblock %}
