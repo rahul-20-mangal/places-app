@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from spot.models import Place
+from spot.forms import PlaceForm
+from django.contrib.gis.db.models import PointField
 
 # Create your views here.
 def index(request):
@@ -20,6 +22,18 @@ def all_cities(request):
 def cityplaces(request, inputcity):
     city = Place.objects.filter(city=inputcity)
     return render(request, 'spot/city_places.html', context={'cities':city})
+
+def add_place(request):
+    if request.method == 'POST':
+        form = PlaceForm(request.POST)
+        if form.is_valid():
+            place = form.save(commit=False)
+            place.save()
+            return redirect('list-place')
+    else:
+        form = PlaceForm()
+    
+    return render(request, 'spot/add_place.html', {'form':form})
 
 
 
