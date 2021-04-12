@@ -2,9 +2,15 @@
 
 {% block content %}
 
-{% for place in cities %}
+<div class="container">
+    <ul>
+        {% for place in cities %}
+        <li>
+            <a href="{% url 'detail-place' place.pk %}">{{place}}</a>
+        </li>
 
-    <a href="{% url 'detail-place' place.pk %}">{{place}}</a>
+        {% endfor %}
+    </ul>
+</div>
 
-{% endfor %}
 {% endblock %}
