@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-05fua402-np!(czod)so$vnu-=)245&&q2qzw4&3plr*mf*k@1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['places-app-django.herokuapp.com']
+ALLOWED_HOSTS = ['places-app-django.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'spot.apps.SpotConfig',
     'django.contrib.gis',
+    'leaflet',
 
 ]
 
@@ -77,27 +78,27 @@ WSGI_APPLICATION = 'placesapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'NAME': 'my_db',
-#         'USER': 'admin',
-#         'PASSWORD': 'mangal2008',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'd3r2stih57vuub',
-        'USER': 'wsnxxbznieaoii',
-        'PASSWORD': '130981e0d7722df578a1ff5ea9375ef1d00383f09de8b03e23734f6e0b240631',
-        'HOST': 'ec2-35-174-35-242.compute-1.amazonaws.com',
+        'NAME': 'my_db',
+        'USER': 'admin',
+        'PASSWORD': 'mangal2008',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': 'd3r2stih57vuub',
+#         'USER': 'wsnxxbznieaoii',
+#         'PASSWORD': '130981e0d7722df578a1ff5ea9375ef1d00383f09de8b03e23734f6e0b240631',
+#         'HOST': 'ec2-35-174-35-242.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
