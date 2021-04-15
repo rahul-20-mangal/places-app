@@ -23,17 +23,10 @@ def cityplaces(request, inputcity):
     city = Place.objects.filter(city=inputcity)
     return render(request, 'spot/city_places.html', context={'cities':city})
 
-def add_place(request):
-    if request.method == 'POST':
-        form = PlaceForm(request.POST)
-        if form.is_valid():
-            place = form.save(commit=False)
-            place.save()
-            return redirect('list-place')
-    else:
-        form = PlaceForm()
-    
-    return render(request, 'spot/add_place.html', {'form':form})
+class AddPlace(generic.CreateView):
+    model = Place
+    form_class = PlaceForm
+    template_name = 'spot/add_place.html'
 
 
 
