@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from spot.models import Place
-from spot.forms import PlaceForm
+from spot.models import Place, TypeOfPlace
+from spot.forms import PlaceForm, TypeOfPlaceForm
 from django.contrib.gis.db.models import PointField
-
+from django.urls import reverse
 # Create your views here.
 def index(request):
     
@@ -27,6 +27,13 @@ class AddPlace(generic.CreateView):
     model = Place
     form_class = PlaceForm
     template_name = 'spot/add_place.html'
+
+class AddTypeOfPlace(generic.CreateView):
+    model = TypeOfPlace
+    form_class = TypeOfPlaceForm
+    template_name = 'spot/add_type_of_place.html'
+    def get_success_url(self):
+        return reverse('add-place')
 
 
 

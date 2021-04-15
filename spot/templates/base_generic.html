@@ -35,6 +35,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'add-place' %}">Create Place</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add-type-of-place' %}">Add Type of Place</a>
+          </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
@@ -59,7 +62,7 @@
   </nav>
 
 
-  {% block content %}{% endblock %}
+  <div style="background-color: #08fcf4;">{% block content %}{% endblock %}</div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
