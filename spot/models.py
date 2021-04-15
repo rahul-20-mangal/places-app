@@ -21,7 +21,7 @@ class Place(models.Model):
         return reverse('detail-place', args=[str(self.id)])
 
 class TypeOfPlace(models.Model):
-    type_of_place = models.CharField(max_length=200,null=True,blank=True)
+    type_of_place = models.CharField(max_length=200, default="Not Mentioned")
 
     def __str__(self):
         return self.type_of_place
