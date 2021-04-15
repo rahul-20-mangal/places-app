@@ -9,7 +9,16 @@
   <p><strong>Location:</strong> {{ place.location }}</p>
   <p><strong>Address: </strong> {{ place.address }}</p>
   <p><strong>City:</strong> {{ place.city }}</p>
-  <p><strong>Type of Place:</strong> {{ place.type_of_place }}</p>
+
+  <p><strong>Types of Place:</strong></p>
+  <ul>
+    {% for type in place.type_of_place.all %}
+
+    <li> {{ type.type_of_place }}</li>
+
+    {% endfor %}
+  </ul>
+
 </div>
 
 {% endblock %}
